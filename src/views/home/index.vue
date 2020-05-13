@@ -74,7 +74,7 @@
 
 <script>
 export default {
-  name: '',
+  name: 'Home',
   // 计算属性应用
   computed: {
     // 获得账户名称
