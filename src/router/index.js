@@ -24,9 +24,11 @@ const routes = [
   {
     path: '/home',
     name: 'home',
+    redirect: '/home/welcome',
     component: Home,
     children: [
-      { path: '/home/welcome', name: 'welcome', component: WelCome }
+      { path: '/home/welcome', name: 'welcome', component: WelCome },
+      { path: '/home/article', name: 'article', component: () => import('@/views/article') }
     ]
   }
 
