@@ -4,6 +4,9 @@ import VueRouter from 'vue-router'
 // 引入首页
 import Home from '../views/home/index.vue'
 
+// 引入
+import WelCome from '@/views/welcome/index.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -18,7 +21,14 @@ const routes = [
   // index.vue是默认索引文件，不用设置，自动会寻找，代码更节省，更优雅
   // name属性作用：编程式导航可以利用
   { path: '/login', name: 'login', component: () => import('@/views/Login') },
-  { path: '/home', name: 'home', component: Home }
+  {
+    path: '/home',
+    name: 'home',
+    component: Home,
+    children: [
+      { path: '/home/welcome', name: 'welcome', component: WelCome }
+    ]
+  }
 
 ]
 
